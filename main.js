@@ -1,11 +1,24 @@
 "use strict"
 
 function renderCoffee(coffee) {
-    var html = '<tr class="coffee">';
-    html += '<td>' + coffee.id + '</td>';
-    html += '<td>' + coffee.name + '</td>';
-    html += '<td>' + coffee.roast + '</td>';
-    html += '</tr>';
+    let html = "";
+    if(coffee.roast === "dark"){
+        html = '<div class="coffee col-6">';
+        html += '<div><span class="fs-3">' + coffee.name + '</span>';
+        html += ' <span class="fs-5">' + coffee.roast + '</span></div>';
+        html += '</div>';
+    } else if(coffee.roast === "light"){
+        html = '<div class="coffee col-6">';
+        html += '<div><span class="fs-3">' + coffee.name + '</span>';
+        html += ' <span class="fs-5">' + coffee.roast + '</span></div>';
+        html += '</div>';
+    } else {
+        let html = '<div class="coffee col-6">';
+        html += '<div><span class="fs-3">' + coffee.name + '</span>';
+        html += ' <span class="fs-5">' + coffee.roast + '</span></div>';
+        html += '</div>';
+    }
+
 
     return html;
 }
