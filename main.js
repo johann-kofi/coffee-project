@@ -2,22 +2,27 @@
 
 function renderCoffee(coffee) {
     let html = "";
-    if(coffee.roast === "dark"){
-        html = '<div class="coffee col-6">';
-        html += '<div><span class="fs-3">' + coffee.name + '</span>';
-        html += ' <span class="fs-5">' + coffee.roast + '</span></div>';
-        html += '</div>';
-    } else if(coffee.roast === "light"){
-        html = '<div class="coffee col-6">';
-        html += '<div><span class="fs-3">' + coffee.name + '</span>';
-        html += ' <span class="fs-5">' + coffee.roast + '</span></div>';
-        html += '</div>';
-    } else {
-        let html = '<div class="coffee col-6">';
-        html += '<div><span class="fs-3">' + coffee.name + '</span>';
-        html += ' <span class="fs-5">' + coffee.roast + '</span></div>';
-        html += '</div>';
-    }
+    // if(coffee.roast === "dark"){
+    //     html = '<div class="coffee col-6">';
+    //     html += '<div><span class="fs-3">' + coffee.name + '</span>';
+    //     html += ' <span class="fs-5">' + coffee.roast + '</span></div>';
+    //     html += '</div>';
+    // } else if(coffee.roast === "light"){
+    //     html = '<div class="coffee col-6">';
+    //     html += '<div><span class="fs-3">' + coffee.name + '</span>';
+    //     html += ' <span class="fs-5">' + coffee.roast + '</span></div>';
+    //     html += '</div>';
+    // } else if(coffee.roast === "medium"){
+    //     let html = '<div class="coffee col-6">';
+    //     html += '<div><span class="fs-3">' + coffee.name + '</span>';
+    //     html += ' <span class="fs-5">' + coffee.roast + '</span></div>';
+    //     html += '</div>';
+    // }
+
+    html = '<div class="coffee col-6">';
+    html += '<div><span class="fs-3">' + coffee.name + '</span>';
+    html += ' <span class="fs-5">' + coffee.roast + '</span></div>';
+    html += '</div>';
 
 
     return html;
