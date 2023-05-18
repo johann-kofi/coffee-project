@@ -2,22 +2,11 @@
 
 function renderCoffee(coffee) {
     let html = "";
-    if(coffee.roast === "Medium"){
-        html = '<div class="coffee col-6">';
-        html += '<div><span class="fs-3">' + coffee.name + '</span>';
-        html += ' <span class="fs-5">' + coffee.roast + '</span></div>';
-        html += '</div>';
-    } else if(coffee.roast === "Light"){
-        html = '<div class="coffee col-6">';
-        html += '<div><span class="fs-3">' + coffee.name + '</span>';
-        html += ' <span class="fs-5">' + coffee.roast + '</span></div>';
-        html += '</div>';
-    } else if(coffee.roast === "Dark"){
-        html = '<div class="coffee col-6">';
-        html += '<div><span class="fs-3">' + coffee.name + '</span>';
-        html += ' <span class="fs-5">' + coffee.roast + '</span></div>';
-        html += '</div>';
-    }
+    let fontRoastClass = `font-color-${coffee.roast}`;
+    html = '<div class="coffee col-6">';
+    html += `<div><span class="fs-3 ${fontRoastClass}">${coffee.name}</span>`;
+    html += ' <span class="fs-5">' + coffee.roast + '</span></div>';
+    html += '</div>';
 
     return html;
 }
