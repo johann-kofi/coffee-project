@@ -31,7 +31,6 @@
         } else {
             filteredCoffees = getCoffeesByRoast(coffeeNames(coffees, searchName), selectedRoast);
         }
-
         tbody.innerHTML = renderCoffees(filteredCoffees);
     }
     function getCoffeesByRoast(arrCoffees, roastType) {
@@ -85,4 +84,25 @@
     submitButton.addEventListener('click', updateCoffees);
     roastSelection.addEventListener("change", updateCoffees);
     nameSearch.addEventListener('input', updateCoffees);
+
+
+    /**
+     *  TODO
+     * testing local storage. will come back after doing other features.
+     */
+    if(!localStorage.getItem("coffees")){
+        setLocalStorage();
+    }
+
+    function setLocalStorage(){
+        localStorage.setItem("coffees", JSON.stringify(coffees));
+        getLocalStorage();
+    }
+
+    function getLocalStorage(){
+        coffees = JSON.parse(localStorage.getItem("coffees"));
+    }
+
+
+
 })();
