@@ -41,9 +41,9 @@ ___ JS best practices followed
 
 [x] coffees filtered by roast by changing the select input
 
-___ features at least two of the following bonuses:
+[x] features at least two of the following bonuses:
 
 - [x] case-insensitive search
-- add coffee feature
+- [x] add coffee feature
 - consistent design and styling
-- data persistence using local storage
+- [x] data persistence using local storage

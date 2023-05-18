@@ -60,15 +60,21 @@
 
     function addCoffee(e) {
         e.preventDefault();
-        let leCoffee = {
-            id: coffees.length + 1,
-            name: newCoffeeName.value,
-            roast: newCoffeeRoast.value
+        if(e.target.id === "add-coffee"){
+            let leCoffee = {
+                id: coffees.length + 1,
+                name: newCoffeeName.value,
+                roast: newCoffeeRoast.value
+            }
+            coffees.push(leCoffee);
+        } else {
+            let leCoffee = {
+                id: coffees.length + 1,
+                name: newCoffeeNameMobile.value,
+                roast: newCoffeeRoastMobile.value
+            }
+            coffees.push(leCoffee);
         }
-        coffees.push(leCoffee)
-        coffees.forEach(function (c) {
-            console.log(c);
-        })
         setLocalStorage()
     }
 
@@ -93,16 +99,21 @@
     let tbody = document.querySelector('#coffees');
     let submitButton = document.querySelector('#submit');
     let roastSelection = document.querySelector('#roast-selection');
-    let nameSearch = document.querySelector("#name-search")
+    let nameSearch = document.querySelector("#name-search");
     let newCoffee = document.querySelector("#add-coffee");
-    let newCoffeeRoast = document.querySelector("#add-coffee-roast")
-    let newCoffeeName = document.querySelector("#add-coffee-name")
+    let newCoffeeRoast = document.querySelector("#add-coffee-roast");
+    let newCoffeeName = document.querySelector("#add-coffee-name");
+    let newCoffeeMobile = document.querySelector("#add-coffee-mobile");
+    let newCoffeeRoastMobile = document.querySelector("#add-coffee-roast-mobile");
+    let newCoffeeNameMobile = document.querySelector("#add-coffee-name-mobile");
 
     submitButton.addEventListener('click', updateCoffees);
     roastSelection.addEventListener("change", updateCoffees);
     nameSearch.addEventListener('input', updateCoffees);
     newCoffee.addEventListener("click", addCoffee)
     newCoffee.addEventListener("click", updateCoffees)
+    newCoffeeMobile.addEventListener("click", addCoffee)
+    newCoffeeMobile.addEventListener("click", updateCoffees)
 
 
     /**

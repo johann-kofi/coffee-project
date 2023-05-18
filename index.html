@@ -50,7 +50,7 @@
                         <input class="d-none" id="submit" type="submit"/>
                     </form>
                 </div>
-                <div class="my-5 col-12">
+                <div class="my-5 col-12 d-none d-sm-none d-md-block">
                     <h3 class="text-center">New Café Idea!?</h3>
                     <form>
                         <label for="add-coffee-roast">New Café Roast</label>
@@ -74,6 +74,20 @@
                 </div>
             </div>
         </div>
+	    <div class="my-5 col-12 d-block d-md-none">
+		    <h3 class="text-center">New Café Idea!?</h3>
+		    <form>
+			    <label for="add-coffee-roast-mobile">New Café Roast</label>
+			    <select class="form-control" id="add-coffee-roast-mobile">
+				    <option>Light</option>
+				    <option>Medium</option>
+				    <option>Dark</option>
+			    </select>
+			    <label class="mt-4" for="add-coffee-name-mobile">Coffee Name</label>
+			    <input class="form-control" id="add-coffee-name-mobile" type="text">
+			    <input id="add-coffee-mobile" type="submit"/>
+		    </form>
+	    </div>
     </div>
 </div>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"
