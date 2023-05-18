@@ -1,4 +1,5 @@
 "use strict";
+// TODO: ADD COMMENTS TO CODE. DONT LEAVE IT ALONE
 
 (function () {
 
@@ -67,6 +68,7 @@
                 roast: newCoffeeRoast.value
             }
             coffees.push(leCoffee);
+            // TODO seperate with function.
         } else {
             let leCoffee = {
                 id: coffees.length + 1,
