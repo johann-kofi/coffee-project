@@ -23,40 +23,35 @@
 
     function updateCoffees(e) {
         e.preventDefault();// don't submit the form, we just want to update the data
-        console.log(e.type);
         let selectedRoast = roastSelection.value;
+        let searchName = nameSearch.value;
         let filteredCoffees = [];
-        if (selectedRoast === "All") {
-            tbody.innerHTML = renderCoffees(coffees);
+        if(e.type === "change"){
+            filteredCoffees = coffeeNames(getCoffeesByRoast(coffees, selectedRoast), searchName);
         } else {
-            coffees.forEach(function (coffee) {
-                if (coffee.roast === selectedRoast) {
-                    filteredCoffees.push(coffee);
-                }
-            });
-            tbody.innerHTML = renderCoffees(filteredCoffees);
+            filteredCoffees = getCoffeesByRoast(coffeeNames(coffees, searchName), selectedRoast);
         }
+
+        tbody.innerHTML = renderCoffees(filteredCoffees);
     }
     function getCoffeesByRoast(arrCoffees, roastType) {
         let newCoffees = []
         if (roastType === "All") {
-            tbody.innerHTML = renderCoffees(coffees);
+            newCoffees = arrCoffees;
         } else {
-            coffees.forEach(function (coffee) {
+            arrCoffees.forEach(function (coffee) {
                 if (coffee.roast === roastType) {
                     newCoffees.push(coffee);
                 }
             });
-            tbody.innerHTML = renderCoffees(filteredCoffees);
         }
-
+        return newCoffees;
     }
 
-    function coffeeNames(filteredCoffees) {
-        let nameInput = nameSearch.value;
+    function coffeeNames(filteredCoffees, searchName) {
         let filteredCoffeesByName = [];
         filteredCoffees.forEach(function (coffee) {
-            if (coffee.name.toLowerCase().includes(nameInput.toLowerCase())) {
+            if (coffee.name.toLowerCase().includes(searchName.toLowerCase())) {
                 filteredCoffeesByName.push(coffee)
             }
         });
