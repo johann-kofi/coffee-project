@@ -97,7 +97,6 @@
     let newCoffee = document.querySelector("#add-coffee");
     let newCoffeeRoast = document.querySelector("#add-coffee-roast")
     let newCoffeeName = document.querySelector("#add-coffee-name")
-    tbody.innerHTML = renderCoffees(coffees);
 
     submitButton.addEventListener('click', updateCoffees);
     roastSelection.addEventListener("change", updateCoffees);
@@ -112,6 +111,9 @@
      */
     if (!localStorage.getItem("coffees")) {
         setLocalStorage();
+    } else {
+        getLocalStorage();
+        tbody.innerHTML = renderCoffees(coffees);
     }
 
     function setLocalStorage() {
@@ -121,9 +123,6 @@
 
     function getLocalStorage() {
         coffees = JSON.parse(localStorage.getItem("coffees"));
-    }
-    window.onload = function() {
-        getLocalStorage();
     }
 
 })();
