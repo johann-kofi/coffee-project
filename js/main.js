@@ -1,5 +1,4 @@
 "use strict";
-// TODO: ADD COMMENTS TO CODE. DONT LEAVE IT ALONE
 
 (function () {
 
@@ -108,12 +107,11 @@
      * @returns {{name, id: number, roast}}
      */
     function addNewCoffeeBySection(roastElement, nameElement){
-        let leCoffee = {
+         return {
             id: coffees.length + 1,
             name: nameElement.value,
             roast: roastElement.value
         }
-        return leCoffee;
     }
 
 // from http://www.ncausa.org/About-Coffee/Coffee-Roasts-Guide
