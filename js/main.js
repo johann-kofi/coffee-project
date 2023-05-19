@@ -10,7 +10,7 @@
     function renderCoffee(coffee) {
         let html = "";
         let htmlCSSClassesStr = `font-color-${coffee.roast}`;
-        html = '<div class="coffee m-2 p-0 col-5 col-sm-5 coffee-card-height">';
+        html = '<div class="coffee m-2 p-0 col-9 col-sm-5 coffee-card-height">';
         html += `<div><span class="ps-4 fs-3 ${htmlCSSClassesStr}">${coffee.name}</span>`;
         html += ' <span class="fs-6">' + coffee.roast + '</span></div>';
         html += '</div>';

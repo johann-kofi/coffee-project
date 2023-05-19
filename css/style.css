@@ -9,6 +9,9 @@
     --btn-bg-color-add-coffee: #a1a1a1;
 }
 
+body{
+    font-family: 'Kalam', cursive;
+}
 
 .font-color-Dark{
     color: var(--text-color-dark-roast);
