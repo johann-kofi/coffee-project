@@ -11,7 +11,7 @@
     /* banner variables */
     --bg-anime-image: url("/images/cat-coffee-banner.jpeg");
     --bg-size: cover;
-    --bg-height: 358px;
+    --bg-height: 300px;
 }
 
 body{
