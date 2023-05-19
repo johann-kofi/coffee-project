@@ -108,6 +108,13 @@
         setLocalStorage()
     }
 
+    /**
+     * Get the location of the last {roast} type
+     * for adding new coffees at the end of each
+     * roast section.
+     * @param roast
+     * @returns {number}
+     */
     function getLastIndexOfCoffeeByRoast(roast){
         let lastIndex = 0;
         coffees.forEach(function (coffee, index){
