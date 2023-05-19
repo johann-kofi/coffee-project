@@ -1,94 +1,93 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Coffee</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
-          integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/style.css">
+	<meta charset="UTF-8">
+	<title>Coffee</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+	      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+	<link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <div class="container-fluid">
-        <a class="navbar-brand" href="#">Le Café Noir</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02"
-                aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
-            <ul class="navbar-nav mb-2 mb-lg-0 mx-auto">
-                <li class="justify-content-center nav-item">
-                    <a class="text-center justify-content-center col-8 nav-link" href="#">Menu</a>
-                </li>
-            </ul>
-            <ul class="navbar-nav mb-2 mb-lg-0">
-                <li class="nav-item">
-                    <a class="nav-link" aria-current="page" href="#"><i class="fa-solid fa-user mx-1"></i> Sign Up!</a>
-                </li>
-            </ul>
-        </div>
-    </div>
+	<div class="container-fluid">
+		<a class="navbar-brand" href="#">Le Café Noir</a>
+		<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02"
+		        aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		<div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+			<ul class="navbar-nav mb-2 mb-lg-0 mx-auto">
+				<li class="justify-content-center nav-item">
+					<a class="text-center justify-content-center col-8 nav-link" href="#">Menu</a>
+				</li>
+			</ul>
+			<ul class="navbar-nav mb-2 mb-lg-0">
+				<li class="nav-item">
+					<a class="nav-link" aria-current="page" href="#"><i class="fa-solid fa-user mx-1"></i> Sign Up!</a>
+				</li>
+			</ul>
+		</div>
+	</div>
 </nav>
 <h1 class=" my-5 d-flex justify-content-center">Let's Drink!</h1>
 <hr>
 <div class="container">
-    <div class="d-flex justify-content-center row">
-        <div class="d-flex justify-content-center col-12 col-md-4">
-            <div class="d-flex justify-content-center align-items-center row">
-                <div class="col-12">
-                    <form>
-                        <label for="roast-selection">Roast Type</label>
-                        <select class="form-control" id="roast-selection">
-                            <option>All</option>
-                            <option>Light</option>
-                            <option>Medium</option>
-                            <option>Dark</option>
-                        </select>
-                        <label class="mt-4" for="name-search">Coffee Name</label>
-                        <input class="form-control" id="name-search" placeholder="search cafe" type="text">
-                        <input class="d-none" id="submit" type="submit"/>
-                    </form>
-                </div>
-                <div class="my-5 col-12 d-none d-sm-none d-md-block">
-                    <h3 class="text-center">New Café Idea!?</h3>
-                    <form>
-                        <label for="add-coffee-roast">New Café Roast</label>
-                        <select class="form-control" id="add-coffee-roast">
-                            <option>Light</option>
-                            <option>Medium</option>
-                            <option>Dark</option>
-                        </select>
-                        <label class="mt-4" for="add-coffee-name">Coffee Name</label>
-                        <input class="form-control" id="add-coffee-name" type="text">
-                        <input id="add-coffee" type="submit"/>
-                    </form>
-                </div>
-            </div>
-        </div>
-
-        <div class="d-flex justify-content-center col-12 col-md-8">
-            <div class="d-flex justify-content-center row">
-                <div class="d-flex justify-content-center col-12">
-                    <div id="coffees" class="d-flex align-items-around row"></div>
-                </div>
-            </div>
-        </div>
-	    <div class="my-5 col-12 d-block d-md-none">
-		    <h3 class="text-center">New Café Idea!?</h3>
-		    <form>
-			    <label for="add-coffee-roast-mobile">New Café Roast</label>
-			    <select class="form-control" id="add-coffee-roast-mobile">
-				    <option>Light</option>
-				    <option>Medium</option>
-				    <option>Dark</option>
-			    </select>
-			    <label class="mt-4" for="add-coffee-name-mobile">Coffee Name</label>
-			    <input class="form-control" id="add-coffee-name-mobile" type="text">
-			    <input id="add-coffee-mobile" type="submit"/>
-		    </form>
-	    </div>
-    </div>
+	<div class="d-flex justify-content-center row">
+		<div class="d-flex justify-content-stretch col-12 col-md-3 col-lg-4">
+			<div class="d-flex justify-content-center align-items-center flex-fill row">
+				<div class="col-12">
+					<form>
+						<label for="roast-selection">Roast Type</label>
+						<select class="form-control" id="roast-selection">
+							<option>All</option>
+							<option>Light</option>
+							<option>Medium</option>
+							<option>Dark</option>
+						</select>
+						<label class="mt-4" for="name-search">Coffee Name</label>
+						<input class="form-control" id="name-search" placeholder="search cafe" type="text">
+						<input class="d-none" id="submit" type="submit"/>
+					</form>
+				</div>
+				<div class="my-5 col-12 d-none d-sm-none d-md-block">
+					<h3 class="text-center">New Café Idea!?</h3>
+					<form>
+						<label for="add-coffee-roast">New Café Roast</label>
+						<select class="form-control" id="add-coffee-roast">
+							<option>Light</option>
+							<option>Medium</option>
+							<option>Dark</option>
+						</select>
+						<label class="mt-4" for="add-coffee-name">Coffee Name</label>
+						<input class="form-control" id="add-coffee-name" type="text">
+						<input class="mt-2 form-control button-color" id="add-coffee" type="submit"/>
+					</form>
+				</div>
+			</div>
+		</div>
+		<div class="d-flex justify-content-center col-12 col-md-9 col-lg-8">
+			<div class="d-flex justify-content-center row">
+				<div class="d-flex justify-content-center col-12">
+					<div id="coffees" class="d-flex align-content-start row"></div>
+				</div>
+			</div>
+		</div>
+		<div class="my-5 col-12 d-block d-md-none">
+			<h3 class="text-center">New Café Idea!?</h3>
+			<form>
+				<label for="add-coffee-roast-mobile">New Café Roast</label>
+				<select class="form-control" id="add-coffee-roast-mobile">
+					<option>Light</option>
+					<option>Medium</option>
+					<option>Dark</option>
+				</select>
+				<label class="mt-4" for="add-coffee-name-mobile">Coffee Name</label>
+				<input class="form-control" id="add-coffee-name-mobile" type="text">
+				<input id="add-coffee-mobile" type="submit"/>
+			</form>
+		</div>
+	</div>
 </div>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"
         integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB"

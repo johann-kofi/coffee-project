@@ -5,10 +5,10 @@
 
     function renderCoffee(coffee) {
         let html = "";
-        let fontRoastClass = `font-color-${coffee.roast}`;
-        html = '<div class="coffee col-6">';
-        html += `<div><span class="fs-3 ${fontRoastClass}">${coffee.name}</span>`;
-        html += ' <span class="fs-5">' + coffee.roast + '</span></div>';
+        let htmlCSSClassesStr = `font-color-${coffee.roast}`;
+        html = '<div class="coffee m-2 p-0 col-9 col-sm-5 coffee-card-height">';
+        html += `<div><span class="ps-4 fs-3 ${htmlCSSClassesStr}">${coffee.name}</span>`;
+        html += ' <span class="fs-6">' + coffee.roast + '</span></div>';
         html += '</div>';
 
         return html;
@@ -16,7 +16,7 @@
 
     function renderCoffees(coffees) {
         let html = '';
-        for (let i = coffees.length - 1; i >= 0; i--) {
+        for (let i = 0; i < coffees.length; i++) {
             html += renderCoffee(coffees[i]);
         }
         return html;
@@ -28,9 +28,9 @@
         let searchName = nameSearch.value;
         let filteredCoffees = [];
         if (e.type === "change") {
-            filteredCoffees = coffeeNames(getCoffeesByRoast(coffees, selectedRoast), searchName);
+            filteredCoffees = getCoffeesByName(getCoffeesByRoast(coffees, selectedRoast), searchName);
         } else {
-            filteredCoffees = getCoffeesByRoast(coffeeNames(coffees, searchName), selectedRoast);
+            filteredCoffees = getCoffeesByRoast(getCoffeesByName(coffees, searchName), selectedRoast);
         }
         tbody.innerHTML = renderCoffees(filteredCoffees);
     }
@@ -49,7 +49,7 @@
         return newCoffees;
     }
 
-    function coffeeNames(filteredCoffees, searchName) {
+    function getCoffeesByName(filteredCoffees, searchName) {
         let filteredCoffeesByName = [];
         filteredCoffees.forEach(function (coffee) {
             if (coffee.name.toLowerCase().includes(searchName.toLowerCase())) {

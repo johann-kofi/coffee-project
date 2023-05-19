@@ -1,14 +1,35 @@
+:root{
+    /* font colors */
+    --text-color-dark-roast: #583423;
+    --text-color-medium-roast: #AF6746;
+    --text-color-light-roast: #FFB17A;
 
-body{
-
-
+    /* background colors */
+    --text-bg-color-all-roasts: #cecece;
+    --btn-bg-color-add-coffee: #a1a1a1;
 }
-table {
-    border-collapse: collapse;
-    margin: 15px 0;
+
+
+.font-color-Dark{
+    color: var(--text-color-dark-roast);
 }
 
-td, th {
-    border: 1px solid black;
-    padding: 5px 10px;
+.font-color-Medium{
+    color: var(--text-color-medium-roast);
+}
+
+.font-color-Light{
+    color: var(--text-color-light-roast);
+}
+
+.font-bg-color-all-roasts{
+    background-color: var(--text-bg-color-all-roasts);
+}
+
+.button-color{
+    background-color: var(--btn-bg-color-add-coffee);
+}
+
+.coffee-card-height{
+    height: 3em;
 }
