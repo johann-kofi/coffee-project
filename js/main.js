@@ -92,13 +92,32 @@
         e.preventDefault();
         if(e.target.id === "add-coffee"){
             let leCoffee = addNewCoffeeBySection(newCoffeeRoast, newCoffeeName);
-            coffees.push(leCoffee);
+            if(newCoffeeRoast.value !== "Dark") {
+                coffees.splice(getLastIndexOfCoffeeByRoast(newCoffeeRoast.value), 0, leCoffee);
+            } else {
+                coffees.push(leCoffee);
+            }
         } else {
             let leCoffee = addNewCoffeeBySection(newCoffeeRoastMobile, newCoffeeNameMobile)
-            coffees.push(leCoffee);
+            if(newCoffeeRoast.value !== "Dark") {
+                coffees.splice(getLastIndexOfCoffeeByRoast(newCoffeeRoastMobile.value), 0, leCoffee);
+            } else {
+                coffees.push(leCoffee);
+            }
         }
         setLocalStorage()
     }
+
+    function getLastIndexOfCoffeeByRoast(roast){
+        let lastIndex = 0;
+        coffees.forEach(function (coffee, index){
+            if(coffee.roast === roast){
+                lastIndex = index;
+            }
+        });
+        return lastIndex + 1;
+    }
+
 
     /**
      * creates an element for new roast and name
