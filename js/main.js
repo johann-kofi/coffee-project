@@ -3,10 +3,15 @@
 
 (function () {
 
+    /**
+     * returns HTML for elements on the page
+      * @param coffee
+     * @returns {string}
+     */
     function renderCoffee(coffee) {
         let html = "";
         let htmlCSSClassesStr = `font-color-${coffee.roast}`;
-        html = '<div class="coffee m-2 p-0 col-9 col-sm-5 coffee-card-height">';
+        html = '<div class="coffee m-2 p-0 col-5 col-sm-5 coffee-card-height">';
         html += `<div><span class="ps-4 fs-3 ${htmlCSSClassesStr}">${coffee.name}</span>`;
         html += ' <span class="fs-6">' + coffee.roast + '</span></div>';
         html += '</div>';
@@ -14,6 +19,11 @@
         return html;
     }
 
+    /**
+     * returns HTML
+     * @param coffees
+     * @returns {string}
+     */
     function renderCoffees(coffees) {
         let html = '';
         for (let i = 0; i < coffees.length; i++) {
@@ -22,6 +32,10 @@
         return html;
     }
 
+    /**
+     * updates coffees by roast and name
+     * @param e
+     */
     function updateCoffees(e) {
         e.preventDefault();// don't submit the form, we just want to update the data
         let selectedRoast = roastSelection.value;
@@ -35,6 +49,12 @@
         tbody.innerHTML = renderCoffees(filteredCoffees);
     }
 
+    /**
+     * gets coffee by roast type
+     * @param arrCoffees
+     * @param roastType
+     * @returns {*[]}
+     */
     function getCoffeesByRoast(arrCoffees, roastType) {
         let newCoffees = []
         if (roastType === "All") {
@@ -49,6 +69,12 @@
         return newCoffees;
     }
 
+    /**
+     * gets coffee by name while setting search to case in-sensitive
+     * @param filteredCoffees
+     * @param searchName
+     * @returns {*[]}
+     */
     function getCoffeesByName(filteredCoffees, searchName) {
         let filteredCoffeesByName = [];
         filteredCoffees.forEach(function (coffee) {
@@ -59,25 +85,35 @@
         return filteredCoffeesByName
     }
 
+    /**
+     * adds new coffee for regular screens xl to md and mobile screens sm to xs
+     * @param e
+     */
     function addCoffee(e) {
         e.preventDefault();
         if(e.target.id === "add-coffee"){
-            let leCoffee = {
-                id: coffees.length + 1,
-                name: newCoffeeName.value,
-                roast: newCoffeeRoast.value
-            }
+            let leCoffee = addNewCoffeeBySection(newCoffeeRoast, newCoffeeName);
             coffees.push(leCoffee);
-            // TODO seperate with function.
         } else {
-            let leCoffee = {
-                id: coffees.length + 1,
-                name: newCoffeeNameMobile.value,
-                roast: newCoffeeRoastMobile.value
-            }
+            let leCoffee = addNewCoffeeBySection(newCoffeeRoastMobile, newCoffeeNameMobile)
             coffees.push(leCoffee);
         }
         setLocalStorage()
+    }
+
+    /**
+     * creates an element for new roast and name
+     * @param roastElement
+     * @param nameElement
+     * @returns {{name, id: number, roast}}
+     */
+    function addNewCoffeeBySection(roastElement, nameElement){
+        let leCoffee = {
+            id: coffees.length + 1,
+            name: nameElement.value,
+            roast: roastElement.value
+        }
+        return leCoffee;
     }
 
 // from http://www.ncausa.org/About-Coffee/Coffee-Roasts-Guide
@@ -97,7 +133,10 @@
         {id: 13, name: 'Italian', roast: 'Dark'},
         {id: 14, name: 'French', roast: 'Dark'},
     ];
-
+    /**
+     * this section includes all query selectors by id name
+     * @type {Element}
+     */
     let tbody = document.querySelector('#coffees');
     let submitButton = document.querySelector('#submit');
     let roastSelection = document.querySelector('#roast-selection');
@@ -109,6 +148,9 @@
     let newCoffeeRoastMobile = document.querySelector("#add-coffee-roast-mobile");
     let newCoffeeNameMobile = document.querySelector("#add-coffee-name-mobile");
 
+    /**
+     * in this section event listeners are added to automate
+     */
     submitButton.addEventListener('click', updateCoffees);
     roastSelection.addEventListener("change", updateCoffees);
     nameSearch.addEventListener('input', updateCoffees);
@@ -119,8 +161,7 @@
 
 
     /**
-     *  TODO
-     * testing local storage. will come back after doing other features.
+     * Local storage for caching data client side
      */
     if (!localStorage.getItem("coffees")) {
         setLocalStorage();

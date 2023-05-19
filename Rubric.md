@@ -15,35 +15,35 @@ ___ both team members speak about their contributions (one team member speaks fo
 
 ### Code Quality 40%
 
-___ code formatted and documented consistently, i.e. use of whitespace and comments
+- [x] code formatted and documented consistently, i.e. use of whitespace and comments
 
-___ project is well-organized
+- [x] project is well-organized
 
-- [x] external style sheets and scripts only (no inline CSS or JS in HTML file)
-- [x] separate folders for scripts, style sheets, and assets
+  - [x] external style sheets and scripts only (no inline CSS or JS in HTML file)
+  - [x] separate folders for scripts, style sheets, and assets
 
-___ non-functioning (commented out) code has been removed
+- [x] non-functioning (commented out) code has been removed
 
-___ JS best practices followed
+- [x] JS best practices followed
 
-- clearly named ids and variable names
-- [x] strict mode enabled and code wrapped in IIFE
-- code mostly abstracted into smaller functions (under 15 lines)
+  - [x] clearly named ids and variable names
+  - [x] strict mode enabled and code wrapped in IIFE
+  -   [x] code mostly abstracted into smaller functions (under 15 lines)
   
   
 ### Output (50%)
 
-[x] coffees are in divs or similar semantic elements and not within a table
+- [x] coffees are in divs or similar semantic elements and not within a table
 
-[x] all coffees displayed in order by id on page load
+- [x] all coffees displayed in order by id on page load
 
-[x] coffee search by name feature works as required (updates displayed coffees as user types in text field)
+- [x] coffee search by name feature works as required (updates displayed coffees as user types in text field)
 
-[x] coffees filtered by roast by changing the select input
+- [x] coffees filtered by roast by changing the select input
 
-[x] features at least two of the following bonuses:
+- [x] features at least two of the following bonuses:
 
-- [x] case-insensitive search
-- [x] add coffee feature
-- consistent design and styling
-- [x] data persistence using local storage
+  - [x] case-insensitive search
+  - [x] add coffee feature
+  - [x] consistent design and styling
+  - [x] data persistence using local storage
