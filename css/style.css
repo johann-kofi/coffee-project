@@ -18,6 +18,10 @@ body{
     font-family: 'Kalam', cursive;
 }
 
+nav{
+    background-color: #dbdbdb;
+}
+
 .font-color-Dark{
     color: var(--text-color-dark-roast);
 }
