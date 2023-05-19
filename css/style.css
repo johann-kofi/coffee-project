@@ -7,6 +7,11 @@
     /* background colors */
     --text-bg-color-all-roasts: #cecece;
     --btn-bg-color-add-coffee: #a1a1a1;
+
+    /* banner variables */
+    --bg-anime-image: url("/images/tg-coffee-shop.jpeg");
+    --bg-size: cover;
+    --bg-height: 358px;
 }
 
 body{
@@ -35,4 +40,11 @@ body{
 
 .coffee-card-height{
     height: 3em;
+}
+
+.banner-image{
+    background-image: var(--bg-anime-image);
+    background-size: var(--bg-size);
+    height: var(--bg-height);
+    background-repeat: no-repeat;
 }
