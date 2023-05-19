@@ -125,9 +125,8 @@
         return lastIndex + 1;
     }
 
-
     /**
-     * creates an element for new roast and name
+     * used to create and return a new coffee object for adding to our coffees array.
      * @param roastElement
      * @param nameElement
      * @returns {{name, id: number, roast}}
