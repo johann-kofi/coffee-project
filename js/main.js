@@ -90,22 +90,22 @@
      */
     function addCoffee(e) {
         e.preventDefault();
+        let roast;
+        let name;
         if(e.target.id === "add-coffee"){
-            let leCoffee = addNewCoffeeBySection(newCoffeeRoast, newCoffeeName);
-            if(newCoffeeRoast.value !== "Dark") {
-                coffees.splice(getLastIndexOfCoffeeByRoast(newCoffeeRoast.value), 0, leCoffee);
-            } else {
-                coffees.push(leCoffee);
-            }
+            roast = newCoffeeRoast;
+            name = newCoffeeName;
         } else {
-            let leCoffee = addNewCoffeeBySection(newCoffeeRoastMobile, newCoffeeNameMobile)
-            if(newCoffeeRoast.value !== "Dark") {
-                coffees.splice(getLastIndexOfCoffeeByRoast(newCoffeeRoastMobile.value), 0, leCoffee);
-            } else {
-                coffees.push(leCoffee);
-            }
+            roast = newCoffeeRoastMobile;
+            name = newCoffeeNameMobile;
         }
-        setLocalStorage()
+        let leCoffee = addNewCoffeeBySection(roast, name);
+        if(roast.value !== "Dark") {
+            coffees.splice(getLastIndexOfCoffeeByRoast(roast.value), 0, leCoffee);
+        } else {
+            coffees.push(leCoffee);
+        }
+        setLocalStorage();
     }
 
     /**
